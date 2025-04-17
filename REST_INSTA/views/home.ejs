@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .user{
+            padding: 10px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            background-color: rgb(167, 167, 82);
+            width: 400px;
+        }
+        .user img{
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Sasta_Insta</h1>
+    <h1>All Users</h1>
+    <div class="container">
+        <% for (const user of users) { %>
+            <div class="user">
+                <img src=<%= user.profile_picture %> alt="profile">
+                <h4>@<%= user.username %></h4>
+                <h5>
+                    <%= user.bio %>
+                </h5>
+                <a href="http://localhost:8080/user/<%= user.id %>">Go to profile</a>
+            </div>
+            <%}%>
+    </div>
+</body>
+</html>

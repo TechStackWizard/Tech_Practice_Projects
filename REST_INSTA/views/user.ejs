@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="header">
+        <img src=<%= user.profile_picture %> alt="img" class="profile">
+        <div>
+            <div class="username">
+                <h4>@<%= user.username %></h4>
+            </div>
+            <div class="user-info">
+                <h4>Post <%= user.posts.length %></h4>
+                <h4>0 Followers</h4>
+                <h4>0 Following</h4>
+            </div>
+            <div class="bio">
+                <h5>Bio: <%= user.bio %></h5>
+            </div>
+            <div class="buttons">
+                <button>Follow</button>
+                <button >Message</button>
+                <a href="http://localhost:8080/user/<%= user.id %>/edit" style="background-color: white; padding: 2px 5px; text-decoration: none; color: black;">Edit</a>
+            </div>
+        </div>
+    </div>
+    <h5>All Posts</h5>
+    <div class="posts">
+        <% for (const post of user.posts) { %>
+            <div class="post">
+                <img src=<%= post.post_image %> alt="post_image">
+                <div class="post-info">
+                    <h4>&hearts;<%= post.likes %></h4>
+                    <h4>&EmptyVerySmallSquare;<%= post.comments %></h4>
+                    <h4>&sharp;<%= post.shares %></h4>
+                </div>
+                <form method="post" action="/user/<%= user.id %>/<%= post.id %>?_method=DELETE">
+                    <button>Delete your post</button>
+                </form>
+            </div>
+            <%}%>
+        <h4><%=  %></h4>
+    </div>
+</body>
+</html>
