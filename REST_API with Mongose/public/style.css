@@ -1,0 +1,35 @@
+.chat{
+    width: 400px;
+    border-radius: 20px;
+ background-color: rgb(170, 162, 162);
+ padding: 5px 20px;
+ margin: 10px 0px;
+}
+
+.msg{
+    background-color: rgba(22, 98, 211, 0.644);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.newChat{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    
+}
+.choice{
+    display: flex;
+    gap: 10px;
+}
+.button{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 4px 10px;
+    background-color: rgb(26, 81, 88);
+    margin: 10px 0px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
